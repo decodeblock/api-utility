@@ -28,6 +28,7 @@ composer require decodeblock/api-utility
 Using the `ApiResponder` trait for handling JSON responses:
 
 ```php
+use Illuminate\Http\Response;
 use Decodeblock\ApiUtility\Traits\ApiResponder;
 
 class YourController extends Controller
@@ -36,14 +37,14 @@ class YourController extends Controller
 
     public function index()
     {
-        return $this->success(['message' => 'Hello, API Utility!']);
+        return $this->successResponse("Hello, API Utility", Response::HTTP_OK, null);
     }
 }
 ```
 
 The `ApiResponder` trait provides methods like:
-- `success($message, $code = 200, $data = null, $metadata = null)`: For successful responses.
-- `error($message, $code = 500, $data = null, $metadata = null)`: For error responses.
+- `success($message, $code, $data, $metadata = null)`: For successful responses.
+- `error($message, $code, $data, $metadata = null)`: For error responses.
 
 ---
 
