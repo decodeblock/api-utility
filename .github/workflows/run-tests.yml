@@ -20,7 +20,13 @@ jobs:
         php: [8.4, 8.3]
         laravel: [11.*, 10.*]
         stability: [prefer-stable]
-        testbench: [9.*, 8.*]
+        include:
+          - laravel: 11.*
+            testbench: 9.*
+            carbon: ^2.63
+          - laravel: 10.*
+            testbench: 8.*
+            carbon: ^2.63
 
     name: Test PHP${{ matrix.php }} Laravel${{ matrix.laravel }} [${{ matrix.stability }}] on ${{ matrix.os }}
 
@@ -45,7 +51,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.os == 'windows-latest' && '^^^' || '' }}${{ matrix.carbon }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
 
       - name: List Installed Dependencies
