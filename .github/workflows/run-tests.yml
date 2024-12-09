@@ -20,6 +20,7 @@ jobs:
         php: [8.4, 8.3]
         laravel: [11.*, 10.*]
         stability: [prefer-stable]
+        testbench: [9.*, 8.*]
 
     name: Test PHP${{ matrix.php }} Laravel${{ matrix.laravel }} [${{ matrix.stability }}] on ${{ matrix.os }}
 
