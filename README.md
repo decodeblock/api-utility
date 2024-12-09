@@ -1,84 +1,77 @@
-# Helper functions for api development with laravel
+# API Utility
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Code Style Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+A Laravel package providing helper functions for streamlined API development. Simplify response handling and enhance the structure of your APIs.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/api-utility.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/api-utility)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+---
 
 ## Installation
 
-You can install the package via composer:
+Install the package via Composer:
 
 ```bash
 composer require decodeblock/api-utility
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="api-utility-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="api-utility-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="api-utility-views"
-```
+---
 
 ## Usage
 
+### Example
+Using the `ApiResponder` trait for handling JSON responses:
+
 ```php
-$apiUtility = new Decodeblock\ApiUtility();
-echo $apiUtility->echoPhrase('Hello, Decodeblock!');
+use Decodeblock\ApiUtility\Traits\ApiResponder;
+
+class YourController extends Controller
+{
+    use ApiResponder;
+
+    public function index()
+    {
+        return $this->success(['message' => 'Hello, API Utility!']);
+    }
+}
 ```
 
+The `ApiResponder` trait provides methods like:
+- `success($data, $message = '', $status = 200)`: For successful responses.
+- `error($message, $status = 400)`: For error responses.
+
+---
+
 ## Testing
+
+Run tests using:
 
 ```bash
 composer test
 ```
 
+---
+
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Detailed changes for each release are documented in the [CHANGELOG](CHANGELOG.md).
+
+---
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+We welcome contributions! Please see the [CONTRIBUTING](CONTRIBUTING.md) guide for details.
 
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+---
 
 ## Credits
 
-- [Gabriel Ibenye](https://github.com/gabbyti)
-- [All Contributors](../../contributors)
+- **[Gabriel Ibenye](https://github.com/gabbyti)**
+
+---
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+This package is licensed under the [MIT License](LICENSE.md).
