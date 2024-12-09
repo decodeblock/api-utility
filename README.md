@@ -42,8 +42,8 @@ class YourController extends Controller
 ```
 
 The `ApiResponder` trait provides methods like:
-- `success($data, $message = '', $status = 200)`: For successful responses.
-- `error($message, $status = 400)`: For error responses.
+- `success($message, $code = 200, $data = null, $metadata = null)`: For successful responses.
+- `error($message, $code = 500, $data = null, $metadata = null)`: For error responses.
 
 ---
 

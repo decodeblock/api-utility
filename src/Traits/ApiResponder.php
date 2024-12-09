@@ -6,7 +6,7 @@ use Illuminate\Http\Response;
 
 trait ApiResponder
 {
-    public function successResponse($message, $data = null, $code = Response::HTTP_OK, $metadata = null)
+    public function successResponse($message, $code = Response::HTTP_OK, $data = null, $metadata = null)
     {
 
         return response()->json([
@@ -18,7 +18,7 @@ trait ApiResponder
         ], $code);
     }
 
-    public function failureResponse($message, $code, $data = null, $metadata = null)
+    public function failureResponse($message, $code = Response::HTTP_INTERNAL_SERVER_ERROR, $data = null, $metadata = null)
     {
         return response()->json([
             'success' => false,
