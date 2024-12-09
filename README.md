@@ -1,9 +1,12 @@
 # API Utility
 
+[![License](https://img.shields.io/github/license/decodeblock/api-utility.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
 [![Tests Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Code Style Status](https://img.shields.io/github/actions/workflow/status/decodeblock/api-utility/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/decodeblock/api-utility/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/decodeblock/api-utility.svg?style=flat-square)](https://packagist.org/packages/decodeblock/api-utility)
+[![Contributors](https://img.shields.io/github/contributors/decodeblock/api-utility.svg?style=flat-square)](https://github.com/decodeblock/api-utility/graphs/contributors)
+[![PHP Version Support](https://img.shields.io/packagist/php-v/decodeblock/api-utility.svg?style=flat-square)](https://www.php.net/)
 
 A Laravel package providing helper functions for streamlined API development. Simplify response handling and enhance the structure of your APIs.
 
