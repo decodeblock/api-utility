@@ -17,7 +17,7 @@ it('returns a success response with metadata', function () {
     $data = ['key' => 'value'];
     $metadata = ['page' => 1, 'total' => 100];
 
-    $response = $this->testClass->successResponse($message, $data, Response::HTTP_OK, $metadata);
+    $response = $this->testClass->successResponse($message, Response::HTTP_OK, $data, $metadata);
 
     expect($response->getStatusCode())->toBe(Response::HTTP_OK)
         ->and($response->getData(true))->toMatchArray([
