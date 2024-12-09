@@ -18,9 +18,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         php: [8.4, 8.3]
-        laravel: [11.*, 10.*]
+        laravel: [^11.*, ^10.*]
         stability: [prefer-stable]
-        testbench: [9.*, 8.*]
+        testbench: [^9.*, ^8.*]
 
     name: Test PHP${{ matrix.php }} Laravel${{ matrix.laravel }} [${{ matrix.stability }}] on ${{ matrix.os }}
 
